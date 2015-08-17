@@ -1,0 +1,17 @@
+all: pipeline.exe
+
+pipeline.exe: pipeline.obj projfunctions.obj projclassesimplementation.obj
+	cl pipeline.obj projfunctions.obj projclassesimplementation.obj
+	
+pipeline.obj: pipeline.cpp
+	cl /c pipeline.cpp
+		
+projfunctions.obj: projfunctions.cpp
+	cl /c projfunctions.cpp
+	
+projclassesimplementation.obj: projclassesimplementation.cpp
+	cl /c projclassesimplementation.cpp
+
+clean :
+	rm *.obj
+	rm *.exe
